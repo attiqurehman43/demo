@@ -34,12 +34,21 @@ const App = () => {
   const [add, setadd] = useState(false);
   const [search, setsearch] = useState('');
 
-  const result = DATA => {
-    const abc = DATA.reduce((acc, curr) => acc + curr.id, 0);
-    console.log(abc);
-    return abc;
-  };
-  result(DATA);
+  // const result = DATA => {
+  //   const abc = DATA.reduce((acc, curr) => acc + curr.id, 0);
+  //   console.log(abc);
+  //   return abc;
+  // };
+  // result(DATA);
+  const occurances = DATA.reduce((acc, curr) => {
+    if (curr in acc) {
+      acc[curr] = acc[curr] + 1;
+    } else {
+      acc[curr] = 1;
+    }
+    return acc;
+  }, {});
+  console.log(occurances);
 
   /*For Loop*/
   // useEffect(() => {
