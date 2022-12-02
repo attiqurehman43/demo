@@ -126,6 +126,7 @@ const App = () => {
   //   setData(newData);
   //   setisRender(!isRender);
   // };
+
   /*FUntion of Find*/
   // const onEdit = editItem => {
   //   const abc = data.find(item => item.id == editItem);
@@ -134,6 +135,7 @@ const App = () => {
 
   //   // console.log('pop', abc);
   // };
+
   /*FUntion of FindIndex*/
   const onEdit = editItem => {
     const abc = data.findIndex(item => item.id == editItem);
