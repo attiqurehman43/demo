@@ -17,14 +17,14 @@ const DATA = [
   {id: 4, text: 'Four'},
 ];
 
-// const newData = [
-//   {id: 5, text: '01'},
-//   {id: 6, text: '02'},
-//   {id: 7, text: '03'},
-//   {id: 8, text: '04'},
-// ];
+const newData = [
+  {id: 5, text: 'Five'},
+  {id: 6, text: 'Six'},
+  {id: 7, text: 'Seven'},
+  {id: 8, text: 'Eight'},
+];
 
-const App = () => { ....
+const App = () => {
   const [data, setData] = useState(DATA);
   const [isRender, setisRender] = useState(false);
   const [isModalVisible, setisModalVisible] = useState(false);
@@ -34,9 +34,12 @@ const App = () => { ....
   const [add, setadd] = useState(false);
   const [search, setsearch] = useState('');
 
-  const abc = DATA.reduce((acc, curr) => acc + curr.id, 0);
-
-  console.log(abc);
+  const result = DATA => {
+    const abc = DATA.reduce((acc, curr) => acc + curr.id, 0);
+    console.log(abc);
+    return abc;
+  };
+  result(DATA);
 
   /*For Loop*/
   // useEffect(() => {
@@ -57,14 +60,14 @@ const App = () => { ....
   // }, []);
 
   /* Do while loop */
-  // useEffect(() => {
-  //   let i = 0;
-  //   do {
-  //     DATA.push(newData[i]);
-  //     i++;
-  //   } while (i < newData.length);
-  //   console.log(DATA);
-  // }, []);
+  useEffect(() => {
+    let i = 0;
+    do {
+      DATA.push(newData[i]);
+      i++;
+    } while (i < newData.length);
+    console.log(DATA);
+  }, []);
 
   const onPressItem = item => {
     setisModalVisible(true);
@@ -102,7 +105,7 @@ const App = () => { ....
   };
 
   // const onEdit = editItem => {
-  //   const newData = data.find(item => {
+  //   const newData = data.map(item => {
   //     if (item.id == editItem) {
   //       item.text = inputText;
   //       return item;
