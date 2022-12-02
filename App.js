@@ -40,6 +40,8 @@ const App = () => {
   //   return abc;
   // };
   // result(DATA);
+
+  // Check total number of occurances in array
   const occurances = DATA.reduce((acc, curr) => {
     if (curr in acc) {
       acc[curr] = acc[curr] + 1;
