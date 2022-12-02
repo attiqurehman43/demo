@@ -24,7 +24,7 @@ const DATA = [
 //   {id: 8, text: '04'},
 // ];
 
-const App = () => {
+const App = () => { ....
   const [data, setData] = useState(DATA);
   const [isRender, setisRender] = useState(false);
   const [isModalVisible, setisModalVisible] = useState(false);
