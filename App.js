@@ -162,6 +162,7 @@ const App = () => {
     setisModalVisible(false);
   };
 
+  //Filter Data from Array
   let bData = data.filter(i =>
     search.length > 0 ? i.text.toLowerCase().includes(search.toLowerCase()) : i,
   );
