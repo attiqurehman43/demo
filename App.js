@@ -206,7 +206,7 @@ const App = () => {
             multiline={false}
             maxLength={200}
           />
-          {add ? (
+          {add ? ( // condition
             <TouchableOpacity onPress={onSave} style={styles.touchableSave}>
               <Text>Add Item</Text>
             </TouchableOpacity>
